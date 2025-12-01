@@ -1,0 +1,719 @@
+/* ========================================
+   I'm the Commish (DOGS) App Landing Page
+   ======================================== */
+
+/* Page-specific overrides */
+.dogs-page {
+    --app-primary: var(--uw-purple);
+    --app-secondary: var(--uw-gold);
+}
+
+/* Dark navbar for DOGS page */
+.navbar-dark {
+    background: rgba(75, 46, 131, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .nav-logo {
+    color: var(--white);
+}
+
+.navbar-dark .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-dark .nav-link:hover {
+    color: var(--white);
+}
+
+.navbar-dark .nav-link::after {
+    background: var(--uw-gold);
+}
+
+.navbar-dark .nav-cta {
+    background: var(--uw-gold);
+    color: var(--uw-purple) !important;
+}
+
+.navbar-dark .nav-cta:hover {
+    background: var(--uw-gold-light);
+}
+
+.navbar-dark .nav-toggle span {
+    background: var(--white);
+}
+
+/* ========================================
+   DOGS Hero Section
+   ======================================== */
+.dogs-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--uw-purple) 0%, var(--uw-purple-dark) 100%);
+    padding-top: 80px;
+}
+
+.dogs-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(183, 165, 122, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
+}
+
+.dogs-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.dogs-badge {
+    display: inline-block;
+    background: var(--uw-gold);
+    color: var(--uw-purple);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-md);
+}
+
+.dogs-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.dogs-tagline {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+}
+
+.dogs-description {
+    font-size: 1rem;
+    color: var(--uw-gold);
+    font-style: italic;
+    margin-bottom: var(--space-xl);
+}
+
+.dogs-cta {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.dogs-cta .btn-primary {
+    background: var(--uw-gold);
+    color: var(--uw-purple);
+}
+
+.dogs-cta .btn-primary:hover {
+    background: var(--uw-gold-light);
+}
+
+.dogs-cta .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--white);
+}
+
+.dogs-cta .btn-secondary:hover {
+    background: var(--white);
+    color: var(--uw-purple);
+    border-color: var(--white);
+}
+
+/* Phone Mockup */
+.dogs-hero-visual {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.phone-mockup {
+    width: 280px;
+    height: 560px;
+    background: #1a1a1a;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow:
+        0 50px 100px -20px rgba(0, 0, 0, 0.5),
+        0 30px 60px -30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: rotateY(-5deg) rotateX(5deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: rotateY(-5deg) rotateX(5deg) translateY(0);
+    }
+    50% {
+        transform: rotateY(-5deg) rotateX(5deg) translateY(-10px);
+    }
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--uw-purple) 0%, var(--uw-purple-dark) 100%);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.app-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 30px;
+}
+
+.app-preview {
+    padding: var(--space-lg);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-logo {
+    font-size: 1.5rem;
+}
+
+.app-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.app-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(10px);
+}
+
+.app-card .card-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-xs);
+}
+
+.app-card .card-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--uw-gold);
+}
+
+/* ========================================
+   Features Section
+   ======================================== */
+.dogs-features {
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.feature-card {
+    text-align: center;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-base);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--uw-gold);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--uw-purple);
+    margin-bottom: var(--space-sm);
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ========================================
+   Games Section
+   ======================================== */
+.dogs-games {
+    background: var(--gray-50);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+}
+
+.game-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-base);
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--uw-gold);
+}
+
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+}
+
+.game-icon {
+    font-size: 2.5rem;
+}
+
+.game-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    background: var(--uw-purple);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+.game-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: var(--space-sm);
+}
+
+.game-description {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.game-features {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-md);
+}
+
+.game-features li {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-lg);
+    position: relative;
+}
+
+.game-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--uw-gold-dark);
+    font-weight: 600;
+}
+
+.games-cta {
+    text-align: center;
+    padding: var(--space-2xl);
+    background: linear-gradient(135deg, var(--uw-purple) 0%, var(--uw-purple-dark) 100%);
+    border-radius: var(--radius-xl);
+    color: var(--white);
+}
+
+.games-cta-text {
+    font-size: 0.9rem;
+    color: var(--uw-gold);
+    margin-bottom: var(--space-xs);
+}
+
+.games-cta-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+}
+
+.games-cta-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   Sports Section
+   ======================================== */
+.dogs-sports {
+    background: var(--white);
+}
+
+.sports-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.sport-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-fast);
+}
+
+.sport-item:hover {
+    border-color: var(--uw-gold);
+    transform: translateY(-2px);
+}
+
+.sport-icon {
+    font-size: 1.5rem;
+}
+
+.sport-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    text-align: center;
+}
+
+/* League Logos Grid */
+.sports-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.league-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition-base);
+    aspect-ratio: 1;
+}
+
+.league-logo:hover {
+    border-color: var(--uw-gold);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.league-logo img {
+    max-width: 60px;
+    max-height: 60px;
+    object-fit: contain;
+    filter: grayscale(0);
+    transition: var(--transition-base);
+}
+
+.league-logo:hover img {
+    transform: scale(1.1);
+}
+
+.sports-more {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   Download Section
+   ======================================== */
+.dogs-download {
+    background: linear-gradient(135deg, var(--uw-purple) 0%, var(--uw-purple-dark) 100%);
+    color: var(--white);
+}
+
+.dogs-download .section-title {
+    color: var(--white);
+}
+
+.dogs-download .section-title::after {
+    background: var(--uw-gold);
+}
+
+.download-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.download-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-md);
+}
+
+.download-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-xl);
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+}
+
+.store-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--gray-900);
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+    min-width: 200px;
+}
+
+.store-button:hover {
+    background: var(--gray-800);
+    transform: translateY(-2px);
+}
+
+.store-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.store-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.store-label {
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+.store-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.download-coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.coming-soon-badge {
+    background: var(--uw-gold);
+    color: var(--uw-purple);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   DOGS Footer
+   ======================================== */
+.dogs-footer {
+    background: var(--gray-900);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+}
+
+.footer-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.footer-tagline {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-lg);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.footer-links a {
+    color: var(--gray-400);
+    font-size: 0.875rem;
+    transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--uw-gold);
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+}
+
+/* ========================================
+   Responsive Design for DOGS Page
+   ======================================== */
+@media (max-width: 1024px) {
+    .dogs-hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .dogs-cta {
+        justify-content: center;
+    }
+
+    .dogs-hero-visual {
+        display: none;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sports-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .sports-logos-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sports-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sports-logos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .store-button {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .sports-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sports-logos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dogs-cta {
+        flex-direction: column;
+    }
+
+    .dogs-cta .btn {
+        width: 100%;
+    }
+}
