@@ -64,6 +64,14 @@
         radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 40%);
 }
 
+.dogs-hero .scroll-indicator {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dogs-hero .scroll-line {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
+}
+
 .dogs-hero-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -248,8 +256,7 @@
 }
 
 .feature-card {
-    text-align: center;
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-lg);
     background: var(--gray-50);
     border: 1px solid var(--gray-200);
@@ -262,16 +269,36 @@
     border-color: var(--uw-gold);
 }
 
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: var(--space-md);
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--uw-purple) 0%, var(--uw-purple-dark) 100%);
+    border-radius: var(--radius-md);
+}
+
+.feature-icon svg {
+    width: 22px;
+    height: 22px;
+    color: var(--uw-gold);
+    stroke: var(--uw-gold);
 }
 
 .feature-title {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: var(--uw-purple);
-    margin-bottom: var(--space-sm);
+    margin: 0;
 }
 
 .feature-description {
@@ -296,10 +323,13 @@
 
 .game-card {
     background: var(--white);
-    padding: var(--space-xl);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-200);
     transition: var(--transition-base);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
 }
 
 .game-card:hover {
@@ -308,26 +338,50 @@
     border-color: var(--uw-gold);
 }
 
-.game-header {
+.game-image {
+    position: relative;
+    width: 140px;
+    min-width: 140px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: var(--space-md);
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+    padding: var(--space-md);
 }
 
-.game-icon {
-    font-size: 2.5rem;
+.game-image img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: var(--radius-md);
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
 }
 
 .game-badge {
-    font-size: 0.7rem;
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--white);
     background: var(--uw-purple);
-    padding: var(--space-xs) var(--space-sm);
+    padding: 2px 6px;
     border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-content {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .game-title {
@@ -347,6 +401,7 @@
 .game-features {
     border-top: 1px solid var(--gray-200);
     padding-top: var(--space-md);
+    margin-top: auto;
 }
 
 .game-features li {
@@ -434,12 +489,32 @@
     text-align: center;
 }
 
-/* League Logos Grid */
-.sports-logos-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--space-lg);
+/* League Logos - Infinite Scroll Carousel */
+.sports-logos-wrapper {
+    overflow: hidden;
     margin-bottom: var(--space-xl);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.sports-logos-grid {
+    display: flex;
+    gap: var(--space-lg);
+    width: max-content;
+    animation: scroll-logos 25s linear infinite;
+}
+
+.sports-logos-grid:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .league-logo {
@@ -450,13 +525,14 @@
     background: var(--white);
     border-radius: var(--radius-lg);
     border: 1px solid var(--gray-200);
-    transition: var(--transition-base);
-    aspect-ratio: 1;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    min-width: 100px;
+    height: 100px;
+    flex-shrink: 0;
 }
 
 .league-logo:hover {
     border-color: var(--uw-gold);
-    transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
 
@@ -608,6 +684,14 @@
     color: var(--white);
 }
 
+/* Brand Name Styling */
+.brand-name {
+    color: var(--uw-gold);
+    font-weight: 600;
+    font-style: italic;
+    white-space: nowrap;
+}
+
 .footer-tagline {
     color: var(--gray-500);
     font-size: 0.9rem;
@@ -661,9 +745,6 @@
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .sports-logos-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 @media (max-width: 768px) {
@@ -676,10 +757,6 @@
     }
 
     .sports-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .sports-logos-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
@@ -702,10 +779,6 @@
 
 @media (max-width: 480px) {
     .sports-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sports-logos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
