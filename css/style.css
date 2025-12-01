@@ -965,7 +965,7 @@ ul, ol {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-xl);
 }
 
@@ -1320,10 +1320,6 @@ ul, ol {
         justify-content: center;
     }
 
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .swimming-timeline {
         grid-template-columns: 1fr;
     }
@@ -1379,10 +1375,6 @@ ul, ol {
 
     .timeline-marker {
         left: 0;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
     }
 
     .projects-grid {
