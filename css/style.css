@@ -194,6 +194,19 @@ ul, ol {
     color: var(--white) !important;
 }
 
+.nav-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: var(--space-xs);
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
