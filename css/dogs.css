@@ -78,10 +78,26 @@
     padding: var(--space-2xl) var(--space-lg);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
+    grid-template-rows: auto auto;
+    gap: var(--space-lg) var(--space-3xl);
     align-items: center;
     position: relative;
     z-index: 1;
+}
+
+.dogs-hero-text {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.dogs-hero-visual {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+.dogs-cta {
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .dogs-badge {
@@ -117,7 +133,7 @@
     font-size: 1rem;
     color: var(--uw-gold);
     font-style: italic;
-    margin-bottom: var(--space-xl);
+    margin-bottom: 0;
 }
 
 .dogs-cta {
@@ -723,15 +739,29 @@
 @media (max-width: 1024px) {
     .dogs-hero-content {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
         text-align: center;
     }
 
-    .dogs-cta {
-        justify-content: center;
+    .dogs-hero-text {
+        grid-column: auto;
+        grid-row: auto;
+        order: 1;
     }
 
     .dogs-hero-visual {
-        margin-top: var(--space-xl);
+        grid-column: auto;
+        grid-row: auto;
+        order: 2;
+        margin-top: var(--space-lg);
+        margin-bottom: var(--space-lg);
+    }
+
+    .dogs-cta {
+        grid-column: auto;
+        grid-row: auto;
+        order: 3;
+        justify-content: center;
     }
 
     .phone-mockup {
