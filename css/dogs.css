@@ -731,7 +731,13 @@
     }
 
     .dogs-hero-visual {
-        display: none;
+        margin-top: var(--space-xl);
+    }
+
+    .phone-mockup {
+        width: 200px;
+        transform: none;
+        animation: none;
     }
 
     .features-grid {
@@ -777,6 +783,10 @@
 @media (max-width: 480px) {
     .sports-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .phone-mockup {
+        width: 180px;
     }
 
     .dogs-cta {
