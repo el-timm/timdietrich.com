@@ -158,6 +158,21 @@
     transform: none;
 }
 
+/* Beta signup button should be active/enabled */
+.dogs-cta #beta-signup-btn-hero,
+.beta-signup-section #beta-signup-btn {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.dogs-cta #beta-signup-btn-hero:hover,
+.beta-signup-section #beta-signup-btn:hover {
+    background: var(--uw-gold-light);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
 .dogs-cta .btn-secondary {
     border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.6);
@@ -683,6 +698,184 @@
 }
 
 /* ========================================
+   Beta Signup Section
+   ======================================== */
+.beta-signup-section {
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.beta-description {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: var(--space-md);
+}
+
+/* ========================================
+   Beta Signup Modal
+   ======================================== */
+.beta-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.beta-modal-content {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.beta-modal-close {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--gray-400);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: var(--transition-base);
+}
+
+.beta-modal-close:hover {
+    background: var(--gray-100);
+    color: var(--gray-600);
+}
+
+.beta-modal-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--uw-purple);
+    margin-bottom: var(--space-sm);
+}
+
+.beta-modal-description {
+    color: var(--gray-600);
+    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+}
+
+.beta-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--gray-700);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: var(--space-md);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    transition: var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--uw-purple);
+    box-shadow: 0 0 0 3px rgba(75, 46, 131, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group .required {
+    color: var(--uw-purple);
+}
+
+.form-help {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-top: var(--space-xs);
+    display: block;
+}
+
+.beta-form-success {
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--uw-gold);
+    margin: 0 auto var(--space-md);
+}
+
+.beta-form-success h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--uw-purple);
+    margin-bottom: var(--space-sm);
+}
+
+.beta-form-success p {
+    color: var(--gray-600);
+}
+
+/* ========================================
    DOGS Footer
    ======================================== */
 .dogs-footer {
@@ -869,5 +1062,14 @@
 
     .dogs-cta .btn {
         width: 100%;
+    }
+
+    .beta-modal-content {
+        padding: var(--space-xl) var(--space-lg);
+        margin: var(--space-md);
+    }
+
+    .beta-modal-title {
+        font-size: 1.5rem;
     }
 }

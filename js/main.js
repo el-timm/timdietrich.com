@@ -357,6 +357,33 @@
         emailLink.href = 'mail' + 'to:' + addr;
     }
 
+    // Email obfuscation for terms and privacy pages
+    const contactEmailTos = document.getElementById('contact-email-tos');
+    if (contactEmailTos) {
+        contactEmailTos.addEventListener('click', function(e) {
+            e.preventDefault();
+            const u = 'timdietrich';
+            const d = 'gmail';
+            const t = 'com';
+            const addr = u + '@' + d + '.' + t;
+            this.href = 'mail' + 'to:' + addr;
+            this.textContent = addr;
+        });
+    }
+
+    const contactEmailPrivacy = document.getElementById('contact-email-privacy');
+    if (contactEmailPrivacy) {
+        contactEmailPrivacy.addEventListener('click', function(e) {
+            e.preventDefault();
+            const u = 'timdietrich';
+            const d = 'gmail';
+            const t = 'com';
+            const addr = u + '@' + d + '.' + t;
+            this.href = 'mail' + 'to:' + addr;
+            this.textContent = addr;
+        });
+    }
+
     // ========================================
     // Initialize
     // ========================================
