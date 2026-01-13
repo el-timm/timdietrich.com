@@ -54,6 +54,7 @@
     overflow: hidden;
     background: linear-gradient(135deg, var(--uw-purple) 0%, var(--uw-purple-dark) 100%);
     padding-top: 80px;
+    padding-bottom: var(--space-md);
 }
 
 .dogs-hero-bg {
@@ -279,6 +280,54 @@
     display: block;
     font-size: 0.75rem;
     color: var(--uw-gold);
+}
+
+/* ========================================
+   Story Section
+   ======================================== */
+.dogs-story {
+    background: var(--gray-50);
+    padding-bottom: var(--space-lg) !important;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-text {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-700);
+}
+
+.story-text p {
+    margin-bottom: var(--space-lg);
+}
+
+.story-lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--uw-purple);
+    margin-bottom: var(--space-xl) !important;
+}
+
+.story-cta {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--uw-gold);
+    margin-top: var(--space-2xl) !important;
+    font-size: 1.1rem;
+}
+
+.story-cta strong {
+    color: var(--uw-purple);
+    display: block;
+    margin-bottom: var(--space-md);
+    font-size: 1.15rem;
 }
 
 /* ========================================
@@ -1014,6 +1063,19 @@
 }
 
 @media (max-width: 768px) {
+    .story-text {
+        font-size: 1rem;
+    }
+
+    .story-lead {
+        font-size: 1.1rem;
+    }
+
+    .story-cta {
+        padding: var(--space-lg);
+        font-size: 1rem;
+    }
+
     .features-grid {
         grid-template-columns: 1fr;
     }
