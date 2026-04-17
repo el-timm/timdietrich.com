@@ -141,5 +141,19 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        (function() {
+            var el = document.getElementById('contact-email-support');
+            if (el) {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var u = 'timdietrich', d = 'gmail', t = 'com';
+                    var addr = u + '@' + d + '.' + t;
+                    this.href = 'mail' + 'to:' + addr;
+                    this.textContent = addr;
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
