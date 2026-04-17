@@ -384,6 +384,19 @@
         });
     }
 
+    const contactEmailSupport = document.getElementById('contact-email-support');
+    if (contactEmailSupport) {
+        contactEmailSupport.addEventListener('click', function(e) {
+            e.preventDefault();
+            const u = 'timdietrich';
+            const d = 'gmail';
+            const t = 'com';
+            const addr = u + '@' + d + '.' + t;
+            this.href = 'mail' + 'to:' + addr;
+            this.textContent = addr;
+        });
+    }
+
     // ========================================
     // Initialize
     // ========================================
