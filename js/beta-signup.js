@@ -98,7 +98,7 @@
                 const recipientEmail = emailParts.u + '@' + emailParts.d + '.' + emailParts.t;
 
                 // Create mailto link with subject and body
-                const subject = encodeURIComponent('Beta Access Request - I\'m the Commish');
+                const subject = encodeURIComponent('Google Play Beta Access Request - I\'m the Commish');
                 const body = encodeURIComponent(
                     `Name: ${name}\n` +
                     `Email: ${email}\n\n` +
