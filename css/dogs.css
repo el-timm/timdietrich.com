@@ -146,15 +146,6 @@
     z-index: 2;
 }
 
-.dogs-cta .store-button {
-    background: rgba(0, 0, 0, 0.55);
-    border-color: rgba(255, 255, 255, 0.35);
-}
-
-.dogs-cta .store-button:hover {
-    background: rgba(0, 0, 0, 0.75);
-    border-color: rgba(255, 255, 255, 0.6);
-}
 
 /* Phone Mockup */
 .dogs-hero-visual {
@@ -656,22 +647,27 @@
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-sm) var(--space-lg);
-    background: var(--gray-900);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #111827;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-md);
     transition: var(--transition-base);
     min-width: 220px;
     font-family: inherit;
+    font-size: 1rem;
     text-align: left;
     text-decoration: none;
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    opacity: 1;
 }
 
 .store-button:hover {
-    background: var(--black, #000);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: var(--white);
+    background: #2d3748;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #ffffff;
+    opacity: 1;
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
