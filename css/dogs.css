@@ -146,47 +146,14 @@
     z-index: 2;
 }
 
-.dogs-cta .btn-primary {
-    background: var(--uw-gold);
-    color: var(--uw-purple);
-    opacity: 0.6;
-    cursor: default;
+.dogs-cta .store-button {
+    background: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.35);
 }
 
-.dogs-cta .btn-primary:hover {
-    background: var(--uw-gold);
-    opacity: 0.6;
-    transform: none;
-}
-
-/* Beta signup button should be active/enabled */
-.dogs-cta #beta-signup-btn-hero,
-.beta-signup-section #beta-signup-btn {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.dogs-cta #beta-signup-btn-hero:hover,
-.beta-signup-section #beta-signup-btn:hover {
-    background: var(--uw-gold-light);
-    opacity: 1;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.dogs-cta .btn-secondary {
-    border-color: rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.6);
-    opacity: 0.6;
-    cursor: default;
-}
-
-.dogs-cta .btn-secondary:hover {
-    background: transparent;
-    color: rgba(255, 255, 255, 0.6);
-    border-color: rgba(255, 255, 255, 0.3);
-    opacity: 0.6;
-    transform: none;
+.dogs-cta .store-button:hover {
+    background: rgba(0, 0, 0, 0.75);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Phone Mockup */
@@ -688,19 +655,25 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-md) var(--space-xl);
+    padding: var(--space-sm) var(--space-lg);
     background: var(--gray-900);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: var(--radius-md);
     transition: var(--transition-base);
-    min-width: 200px;
-    opacity: 0.6;
-    cursor: default;
+    min-width: 220px;
+    font-family: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .store-button:hover {
-    background: var(--gray-900);
-    transform: none;
-    opacity: 0.6;
+    background: var(--black, #000);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .store-icon {
@@ -1122,8 +1095,10 @@
         flex-direction: column;
     }
 
-    .dogs-cta .btn {
+    .dogs-cta .btn,
+    .dogs-cta .store-button {
         width: 100%;
+        justify-content: center;
     }
 
     .beta-modal-content {
