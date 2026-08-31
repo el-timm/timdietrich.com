@@ -1097,6 +1097,7 @@
 
     .dogs-cta {
         flex-direction: column;
+        align-items: center;
     }
 
     .dogs-cta .btn,
